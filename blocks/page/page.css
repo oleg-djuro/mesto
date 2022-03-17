@@ -3,6 +3,7 @@
   min-width: 320px;
   min-height: 100vh;
   margin: 0 auto;
+  padding: 0 200px;
   background-color: #000000;
   font-family: "Inter", "Arial", "Helvetica", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -11,4 +12,21 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   text-rendering: optimizeLegibility;
+}
+
+@media screen and (max-width: 1060px) {
+  .page {
+    padding: 0 calc((100% - 336px - 120px - 30px - 150px - 30px) / 2);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .page {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .page {
+  }
 }
