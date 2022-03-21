@@ -1,0 +1,7 @@
+.elements__photo {
+  max-width: 282px;
+  max-height: 282px;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center;
+}

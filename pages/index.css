@@ -18,3 +18,13 @@
 @import url(../blocks/profile/__button/_name-edit/profile__button_name-edit.css);
 @import url(../blocks/profile/__occupancy/profile__occupancy.css);
 @import url(../blocks/profile/__button/_add/profile__button_add.css);
+
+@import url(../blocks/elements/elements.css);
+@import url(../blocks/elements/__list/elements__list.css);
+@import url(../blocks/elements/__item/elements__item.css);
+@import url(../blocks/elements/__photo/elements__photo.css);
+@import url(../blocks/elements/__item-details/elements__item-details.css);
+@import url(../blocks/elements/__item-name/elements__item-name.css);
+
+@import url(../blocks/elements/__button-like/elements__button-like.css);
+@import url(../blocks/elements/__button-like/_active/elements__button-like_active.css);
