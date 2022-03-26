@@ -1,4 +1,4 @@
-const profileEditButton = document.querySelector('.profile__button_edit'); // найти кнопку редактирования профайла
+const profileEditButton = document.querySelector('.profile__button-edit'); // найти кнопку редактирования профайла
 const popup = document.querySelector('.popup'); // найти попап
 const popupCloseButton = popup.querySelector('.popup__button-close'); // найти кнопку закрытия попапа
 const formElement = popup.querySelector('.popup__form'); // найти форму в DOM
@@ -9,14 +9,14 @@ const profileDescription = document.querySelector('.profile__description'); // �
 
 // добавить класс для открытия попапа
 function openPopup()  {
-popup.classList.add('popup__opened'); 
+popup.classList.add('popup_opened'); 
 nameInput.value = profileName.textContent;
 descriptionInput.value = profileDescription.textContent;
 }
 
 // убрать класс для закрытия попапа
 function closePopup() {
-  popup.classList.remove('popup__opened'); 
+  popup.classList.remove('popup_opened'); 
 }
 
 
