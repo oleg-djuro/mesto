@@ -19,7 +19,6 @@ function closePopup() {
   popup.classList.remove('popup__opened'); 
 }
 
-
 function formSubmitHandler (evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
