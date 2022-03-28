@@ -15,19 +15,20 @@
 @import url(../blocks/profile/__name-container/profile__name-container.css);
 @import url(../blocks/profile/__name/profile__name.css);
 @import url(../blocks/profile/__button/profile__button.css);
-@import url(../blocks/profile/__button/_edit/profile__button_edit.css);
+@import url(../blocks/profile/__button-edit/profile__button-edit.css);
 @import url(../blocks/profile/__description/profile__description.css);
-@import url(../blocks/profile/__button/_add/profile__button_add.css);
+@import url(../blocks/profile/__button-add/profile__button-add.css);
 
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/elements/__list/elements__list.css);
-@import url(../blocks/elements/__item/elements__item.css);
-@import url(../blocks/elements/__photo/elements__photo.css);
-@import url(../blocks/elements/__item-details/elements__item-details.css);
-@import url(../blocks/elements/__item-name/elements__item-name.css);
 
-@import url(../blocks/elements/__button-like/elements__button-like.css);
-@import url(../blocks/elements/__button-like/_active/elements__button-like_active.css);
+@import url(../blocks/list-item/list-item.css);
+@import url(../blocks/list-item/__photo/list-item__photo.css);
+@import url(../blocks/list-item/__details/list-item__details.css);
+@import url(../blocks/list-item/__name/list-item__name.css);
+
+@import url(../blocks/list-item/__button-like/list-item__button-like.css);
+@import url(../blocks/list-item/__button-like/_active/list-item__button-like_active.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
@@ -35,7 +36,6 @@
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__container/popup__container.css);
-@import url(../blocks/popup/__button/profile__button.css);
 @import url(../blocks/popup/__button-close/popup__button-close.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__form/popup__form.css);

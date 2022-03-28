@@ -4,3 +4,10 @@
   height: 24px;
   border: 1px solid #ffffff;
 }
+
+@media screen and (max-width: 600px) {
+  .profile__button-edit {
+    width: 18px;
+    height: 18px;
+  }
+}

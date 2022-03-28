@@ -1,4 +1,4 @@
-.elements__button-like {
+.list-item__button-like {
   width: 22px;
   height: 19px;
   margin-right: 20px;
@@ -13,6 +13,6 @@
   transition: opacity 0.1s ease-in-out;
 }
 
-.elements__button-like:hover {
+.list-item__button-like:hover {
   opacity: 0.5;
 }

@@ -1,7 +1,7 @@
 .profile__name-container {
   max-width: 336px;
   margin: 0 auto;
-  padding: 22px 0 16px;
+  padding: 22px 0 8px;
   display: flex;
   flex-direction: row;
   align-items: baseline;
@@ -10,6 +10,6 @@
 @media screen and (max-width: 600px) {
   .profile__name-container {
     max-width: 282px;
-    padding: 22.25px 0 14px;
+    padding: 26px 0 14px;
   }
 }

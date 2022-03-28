@@ -6,8 +6,9 @@
   background-image: url(../../../images/button_popup_submit.svg);
   background-repeat: no-repeat;
   background-position: center;
-  background-color: transparent;
-  /*background-color: rgba(0, 0, 0, 1);
+  background-color: rgba(0, 0, 0, 1);
+  /* Не использован шрифт, так как кнопка задана без текста, а изображением 
+  background-color: rgba(0, 0, 0, 1);
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
@@ -22,10 +23,13 @@
   opacity: 0.8;
 }
 
+/* Кнопка задана через изображение, а не через текст*/
+
 @media screen and (max-width: 600px) {
   .popup__button-submit {
     width: 238px;
     height: 46px;
     margin-top: 45px;
+    background-image: url(../../../images/button_popup_submit_mobile.svg);
   }
 }
