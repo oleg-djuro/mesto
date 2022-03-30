@@ -7,9 +7,10 @@
   align-items: baseline;
 }
 
+/* по факту в макете указано расстояние  14px. Но это расстояние до строки, а не до блока. До блока, если посчитать, выходит 8px. Оставил это свойство, вдруг придётся исправлять*/
 @media screen and (max-width: 600px) {
   .profile__name-container {
     max-width: 282px;
-    padding: 26px 0 14px;
+    padding: 26px 0 8px;
   }
 }

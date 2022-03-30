@@ -1,4 +1,4 @@
-const profileEditButton = document.querySelector('.profile__button-edit'); // найти кнопку редактирования профайла
+const profileEditButton = document.querySelector('.profile__button_type_edit'); // найти кнопку редактирования профайла
 const popup = document.querySelector('.popup'); // найти попап
 const popupCloseButton = popup.querySelector('.popup__button-close'); // найти кнопку закрытия попапа
 const formElement = popup.querySelector('.popup__form'); // найти форму в DOM
