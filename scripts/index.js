@@ -117,8 +117,6 @@ function formNewCardSubmitHandler (evt) {
   evt.preventDefault();
   const сard = {name: placeNameInput.value, link: placeImageLinkInput.value};
   renderCard(initiateCard(сard));
-  placeNameInput.value = '';
-  placeImageLinkInput.value = '';
   closePopup(popupCardAdd);
   cardAddForm.reset();
 }

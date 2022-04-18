@@ -9,11 +9,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  border-radius: 0px;
 }
 
 @media screen and (max-width: 600px) {
   .popup__container_card-image {
-    max-width: 240px;
     margin: auto 40px;
   }
 }
