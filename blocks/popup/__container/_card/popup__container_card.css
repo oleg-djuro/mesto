@@ -1,4 +1,4 @@
-.popup__container_card-image {
+.popup__container_card {
   width: auto;
   height: auto;
   margin: auto 90px;
@@ -13,7 +13,7 @@
 }
 
 @media screen and (max-width: 600px) {
-  .popup__container_card-image {
+  .popup__container_card {
     margin: auto 40px;
   }
 }
