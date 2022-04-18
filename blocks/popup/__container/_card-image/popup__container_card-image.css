@@ -1,0 +1,19 @@
+.popup__container_card-image {
+  width: auto;
+  height: auto;
+  margin: auto 90px;
+  position: relative;
+  background-color: transparent;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px;
+}
+
+@media screen and (max-width: 600px) {
+  .popup__container_card-image {
+    margin: auto 40px;
+  }
+}
