@@ -51,20 +51,30 @@ const initialCards = [
 ];
 
 const cardsList = document.querySelector('.elements__list'); // найти список карточек
+const cardTemplate = document.querySelector('#element-template'); // найти заготовку карточки
+const popups = document.querySelectorAll('.popup');
 
 // функция открытия попапа
 function openPopup (popup) {
   popup.classList.add('popup__opened');
 };
 
-// функция открытия попапа
+// функция закрытия попапа
 function closePopup (popup) {
   popup.classList.remove('popup__opened');
 };
 
+// закрыть любой попап нажатием по крестику
+popups.forEach((popup) => {
+  popup.addEventListener('click', (evt) => {
+    if(evt.target.classList.contains('popup__button-close')) {
+      closePopup(popup);
+    }
+  })
+});
+
 // инициализировать карточку
 function initiateCard(card) {
-  const cardTemplate = document.querySelector('#element-template');
   const cardItem = cardTemplate.content.querySelector('.elements__item').cloneNode(true);
   const cardImage = cardItem.querySelector('.elements__photo');
   const cardCaption = cardItem.querySelector('.elements__item-name');
@@ -86,8 +96,6 @@ cardItem.remove();
     popupFigureImage.alt = card.name;
     popupFigureCaption.textContent = card.name;
   });
-// закрыть карточку
-  popupCardImageCloseButton.addEventListener('click', () => closePopup(popupCardImage));
     return cardItem;
 }
 
@@ -105,7 +113,7 @@ function openPopupProfileEdit()  {
 }
 
 // редактировать профайл
-function formEditProfileSubmitHandler (evt) {
+function editProfileFormSubmitHandler (evt) {
   evt.preventDefault();
   profileName.textContent = nameInput.value;
   profileDescription.textContent = descriptionInput.value;
@@ -113,7 +121,7 @@ function formEditProfileSubmitHandler (evt) {
 }
 
 // добавить свою карточку
-function formNewCardSubmitHandler (evt) {
+function addCardFormSubmitHandler (evt) {
   evt.preventDefault();
   const сard = {name: placeNameInput.value, link: placeImageLinkInput.value};
   renderCard(initiateCard(сard));
@@ -123,8 +131,6 @@ function formNewCardSubmitHandler (evt) {
 
 // слушать события
 profileEditButton.addEventListener('click', openPopupProfileEdit);
-popupProfileEditCloseButton.addEventListener('click', () => closePopup(popupProfileEdit));
-profileEditForm.addEventListener('submit', formEditProfileSubmitHandler);
+profileEditForm.addEventListener('submit', editProfileFormSubmitHandler);
 cardAddButton.addEventListener('click', () => openPopup(popupCardAdd));
-popupCardAddCloseButton.addEventListener('click', () => closePopup(popupCardAdd));
-cardAddForm.addEventListener('submit', formNewCardSubmitHandler);
+cardAddForm.addEventListener('submit', addCardFormSubmitHandler);
