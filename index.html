@@ -44,24 +44,75 @@
 <!--PROFILE-EDIT-POPUP-->
     <div class="popup" id="popup-profile-edit">
       <div class="popup__container">
-        <button class="popup__button-close popup__button-close_profile-edit" type="button" aria-label="Закрыть всплывающее окно" id="popup-profile-edit-close"></button>
+        <button
+          class="popup__button-close popup__button-close_profile-edit"
+          type="button"
+          aria-label="Закрыть всплывающее окно"
+          id="popup-profile-edit-close"
+        ></button>
         <h2 class="popup__title">Редактировать профиль</h2>
-        <form name="profile-info" class="popup__form" id="profile-edit-form">
-          <input type="text" name="profile-name" placeholder="Как вас зовут?" class="popup__input" id="popup-input-name">
-          <input type="text" name="profile-description" placeholder="Кто вы в этой жизни?" class="popup__input" id="popup-input-description">
-          <button type="submit" class="popup__button-submit"></button>
+        <form
+          name="profile-info"
+          class="popup__form"
+          id="profile-edit-form"
+        >
+          <input 
+            type="text"
+            name="profile-name"
+            placeholder="Как вас зовут?"
+            class="popup__input"
+            id="popup-input-name"
+          >
+          <input 
+            type="text"
+            name="profile-description"
+            placeholder="Кто вы в этой жизни?"
+            class="popup__input"
+            id="popup-input-description"
+          >
+          <button
+            type="submit"
+            class="popup__button-submit"
+          ></button>
         </form>
       </div>
     </div>
 <!--CARD-ADD-POPUP-->
     <div class="popup" id="popup-card-add">
       <div class="popup__container">
-        <button class="popup__button-close popup__button-close_card-add" type="button" aria-label="Закрыть всплывающее окно" id="popup-card-add-close"></button>
+        <button
+          class="popup__button-close popup__button-close_card-add"
+          type="button"
+          aria-label="Закрыть всплывающее окно"
+          id="popup-card-add-close"
+        ></button>
         <h2 class="popup__title">Новое место</h2>
-        <form name="card-add" class="popup__form" id="card-add-form">
-          <input type="text" name="place-name" placeholder="Название" class="popup__input" id="popup-input-place" required>
-          <input type="text" name="place-image-link" placeholder="Ссылка на картинку" class="popup__input" id="popup-input-place-image-link" required>
-          <button type="submit" class="popup__button-submit popup__button-submit_card" id="popup-card-submit"></button>
+        <form 
+          name="card-add"
+          class="popup__form"
+          id="card-add-form"
+        >
+          <input 
+            type="text"
+            name="place-name"
+            placeholder="Название"
+            class="popup__input"
+            id="popup-input-place"
+            required
+          >
+          <input
+            type="text"
+            name="place-image-link"
+            placeholder="Ссылка на картинку"
+            class="popup__input"
+            id="popup-input-place-image-link"
+            required
+          >
+          <button
+            type="submit"
+            class="popup__button-submit popup__button-submit_card"
+            id="popup-card-submit"
+          ></button>
         </form>
       </div>
     </div>
@@ -82,9 +133,17 @@
       <img class="elements__photo" src="#" alt="#">
       <div class="elements__item-details">
         <h2 class="elements__item-name"></h2>
-        <button class="elements__button-like" type="button" aria-label="Поставить лайк"></button>
+        <button
+          class="elements__button-like"
+          type="button"
+          aria-label="Поставить лайк"
+        ></button>
       </div>
-      <button class="elements__button-delete" type="button" aria-label="Удалить"></button>
+      <button 
+        class="elements__button-delete"
+        type="button"
+        aria-label="Удалить"
+      ></button>
     </li>
   </template>
 <!--SCRIPT-->
