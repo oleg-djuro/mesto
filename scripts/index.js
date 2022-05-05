@@ -57,21 +57,34 @@ const popups = document.querySelectorAll('.popup');
 // функция открытия попапа
 function openPopup (popup) {
   popup.classList.add('popup__opened');
+  document.addEventListener('keydown', closePopupByEsc);
 };
 
 // функция закрытия попапа
 function closePopup (popup) {
   popup.classList.remove('popup__opened');
+  document.removeEventListener('keydown', closePopupByEsc);
 };
 
-// закрыть любой попап нажатием по крестику
+// закрыть любой попап нажатием по крестику и по оверлэю
 popups.forEach((popup) => {
-  popup.addEventListener('click', (evt) => {
+  popup.addEventListener('mousedown', (evt) => {
+    if(evt.target.classList.contains('popup__opened')) {
+      closePopup(popup);
+    }
     if(evt.target.classList.contains('popup__button-close')) {
       closePopup(popup);
     }
   })
 });
+
+// закрыть любой попап нажатием по клавише ESC
+function closePopupByEsc(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup__opened');
+    closePopup(openedPopup);
+  }
+};
 
 // инициализировать карточку
 function initiateCard(card) {
