@@ -57,11 +57,12 @@ const enableValidation = (config) => {
 };
 
 // очистить ошибки
-const inputList = formElement.querySelectorAll(config.inputSelector);
-
-inputList.forEach((inputElement) => { 
-  hideInputError(config, formElement, inputElement);
-};
+function clearInputError(config, formElement) { 
+  const inputList = formElement.querySelectorAll(config.inputSelector);
+  inputList.forEach((inputElement) => { 
+    hideInputError(config, formElement, inputElement);
+  });
+}; 
 
 // изменить состояние кнопки отправки формы
 function toggleSubmitButton(config, formElement, submitButton) {

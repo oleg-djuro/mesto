@@ -84,7 +84,7 @@ cardItem.remove();
 }
 
 // рендеринг карточек
-const renderCard = card => cardsList.prepend(card);
+const renderCard = card => cardsContainer.prepend(card);
 
 // добавить первоначальные карточки
 initialCards.forEach(card => renderCard(initiateCard(card)));
@@ -94,7 +94,7 @@ function openPopupProfileEdit() {
   openPopup(popupProfileEdit);
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
-//  clearInputError(config, profileEditForm);
+  clearInputError(config, profileEditForm);
   toggleSubmitButton(config, profileEditForm, profileEditSubmitButton);
 }
 
@@ -110,7 +110,7 @@ function editProfileFormSubmitHandler (evt) {
 function openPopupCardAdd() {
   openPopup(popupCardAdd);
   cardAddForm.reset();
-//  clearInputError(config, cardAddForm);
+  clearInputError(config, cardAddForm);
   toggleSubmitButton(config, cardAddForm, cardAddSubmitButton);
 }
 
