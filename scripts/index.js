@@ -7,6 +7,7 @@ const nameInput = profileEditForm.querySelector('#popup-input-name'); // най�
 const descriptionInput = profileEditForm.querySelector('#popup-input-description'); // найти поле формы ввода данных "Кто ты по жизни?"
 const profileName = document.querySelector('.profile__name'); // найти, куда вставить значение поля формы ввода данных "Как тебя зовут?"
 const profileDescription = document.querySelector('.profile__description'); // найти, куда вставить значение поля формы ввода данных "Кто ты по жизни?"
+const profileEditSubmitButton = document.querySelector('#popup-edit-submit'); // найти кнопку "Сохранить"
 
 // объявить постоянные попапа добавления карточки
 const cardAddButton = document.querySelector('.profile__button_add'); // найти кнопку добавления карточки
@@ -15,6 +16,7 @@ const popupCardAddCloseButton = popupCardAdd.querySelector('#popup-card-add-clos
 const cardAddForm = popupCardAdd.querySelector('#card-add-form'); // найти форму для заполнения попапа добавления карточки
 const placeNameInput = cardAddForm.querySelector('#popup-input-place'); // найти поле формы ввода данных "Название"
 const placeImageLinkInput = cardAddForm.querySelector('#popup-input-place-image-link'); // найти поле формы ввода данных "Ссылка на картинку"
+const cardAddSubmitButton = document.querySelector('#popup-card-submit'); // найти кнопку "Создать"
 
 // объявить постоянные попапа просмотра карточки
 const popupCardImage = document.querySelector('#popup-card-image'); // найти попап изображения карточки
@@ -22,45 +24,17 @@ const popupCardImageCloseButton = popupCardImage.querySelector('#close-popup-car
 const popupFigureImage = popupCardImage.querySelector('.popup__figure-image'); // найти изображение карточки
 const popupFigureCaption = popupCardImage.querySelector('.popup__figure-caption'); // найти описание карточки
 
-// объявить массив первоначальных карточек
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-];
-
 const cardsList = document.querySelector('.elements__list'); // найти список карточек
 const cardTemplate = document.querySelector('#element-template'); // найти заготовку карточки
 const popups = document.querySelectorAll('.popup');
 
-// функция открытия попапа
+// открыть попап
 function openPopup (popup) {
   popup.classList.add('popup__opened');
   document.addEventListener('keydown', closePopupByEsc);
 };
 
-// функция закрытия попапа
+// закрыть попап
 function closePopup (popup) {
   popup.classList.remove('popup__opened');
   document.removeEventListener('keydown', closePopupByEsc);
@@ -119,10 +93,12 @@ const renderCard = card => cardsList.prepend(card);
 initialCards.forEach(card => renderCard(initiateCard(card)));
 
 // открыть попап редактирования профайла
-function openPopupProfileEdit()  {
+function openPopupProfileEdit() {
   openPopup(popupProfileEdit);
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
+  clearInputError(config, profileEditForm);
+  toggleSubmitButton(config, profileEditForm, profileEditSubmitButton);
 }
 
 // редактировать профайл
@@ -131,6 +107,14 @@ function editProfileFormSubmitHandler (evt) {
   profileName.textContent = nameInput.value;
   profileDescription.textContent = descriptionInput.value;
   closePopup(popupProfileEdit);
+}
+
+// открыть попап добавления своей карточки
+function openPopupCardAdd() {
+  cardAddForm.reset();
+  openPopup(popupCardAdd);
+  clearInputError(config, cardAddForm);
+  toggleSubmitButton(config, cardAddForm, cardAddSubmitButton);
 }
 
 // добавить свою карточку
@@ -145,5 +129,5 @@ function addCardFormSubmitHandler (evt) {
 // слушать события
 profileEditButton.addEventListener('click', openPopupProfileEdit);
 profileEditForm.addEventListener('submit', editProfileFormSubmitHandler);
-cardAddButton.addEventListener('click', () => openPopup(popupCardAdd));
+cardAddButton.addEventListener('click', openPopupCardAdd);
 cardAddForm.addEventListener('submit', addCardFormSubmitHandler);

@@ -55,6 +55,7 @@
           name="profile-info"
           class="popup__form"
           id="profile-edit-form"
+          novalidate
         >
           <input 
             type="text"
@@ -62,18 +63,31 @@
             placeholder="Как вас зовут?"
             class="popup__input"
             id="popup-input-name"
+            minlength="2"
+            maxlength="40"
+            required
           >
+          <span class="popup__input-error popup__input-error_position_top"
+            id="popup-input-name-error"
+          ></span>
           <input 
             type="text"
             name="profile-description"
             placeholder="Кто вы в этой жизни?"
             class="popup__input"
             id="popup-input-description"
+            minlength="2"
+            maxlength="200"
+            required
           >
+          <span class="popup__input-error popup__input-error_position_bottom"
+            id="popup-input-description-error"
+          ></span>
           <button
             type="submit"
             class="popup__button-submit"
-          ></button>
+            id="popup-edit-submit"
+          >Сохранить</button>
         </form>
       </div>
     </div>
@@ -91,6 +105,7 @@
           name="card-add"
           class="popup__form"
           id="card-add-form"
+          novalidate
         >
           <input 
             type="text"
@@ -98,21 +113,29 @@
             placeholder="Название"
             class="popup__input"
             id="popup-input-place"
+            minlength="2"
+            maxlength="30"
             required
           >
+          <span class="popup__input-error popup__input-error_position_top"
+            id="popup-input-place-error"
+          ></span>
           <input
-            type="text"
+            type="url"
             name="place-image-link"
             placeholder="Ссылка на картинку"
             class="popup__input"
             id="popup-input-place-image-link"
             required
           >
+          <span class="popup__input-error popup__input-error_position_bottom"
+            id="popup-input-place-image-link-error"
+          ></span>
           <button
             type="submit"
-            class="popup__button-submit popup__button-submit_card"
+            class="popup__button-submit"
             id="popup-card-submit"
-          ></button>
+          >Создать</button>
         </form>
       </div>
     </div>
@@ -147,6 +170,8 @@
     </li>
   </template>
 <!--SCRIPT-->
+  <script src="scripts/cards.js"></script>
   <script src="scripts/index.js"></script>
+  <script src="scripts/validate.js"></script>
 </body>
 </html>
