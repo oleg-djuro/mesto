@@ -24,7 +24,7 @@ const popupCardImageCloseButton = popupCardImage.querySelector('#close-popup-car
 const popupFigureImage = popupCardImage.querySelector('.popup__figure-image'); // найти изображение карточки
 const popupFigureCaption = popupCardImage.querySelector('.popup__figure-caption'); // найти описание карточки
 
-const cardsList = document.querySelector('.elements__list'); // найти список карточек
+const cardsContainer = document.querySelector('.elements__list'); // найти список карточек
 const cardTemplate = document.querySelector('#element-template'); // найти заготовку карточки
 const popups = document.querySelectorAll('.popup');
 
@@ -43,10 +43,7 @@ function closePopup (popup) {
 // закрыть любой попап нажатием по крестику и по оверлэю
 popups.forEach((popup) => {
   popup.addEventListener('mousedown', (evt) => {
-    if(evt.target.classList.contains('popup__opened')) {
-      closePopup(popup);
-    }
-    if(evt.target.classList.contains('popup__button-close')) {
+    if(evt.target.classList.contains('popup__opened') || evt.target.classList.contains('popup__button-close')) {
       closePopup(popup);
     }
   })
@@ -78,10 +75,10 @@ cardItem.remove();
   });
 // открыть изображение карточки
   cardImage.addEventListener('click', () => {
-    openPopup(popupCardImage);
     popupFigureImage.src = card.link;
     popupFigureImage.alt = card.name;
     popupFigureCaption.textContent = card.name;
+    openPopup(popupCardImage);
   });
     return cardItem;
 }
@@ -97,7 +94,7 @@ function openPopupProfileEdit() {
   openPopup(popupProfileEdit);
   nameInput.value = profileName.textContent;
   descriptionInput.value = profileDescription.textContent;
-  clearInputError(config, profileEditForm);
+//  clearInputError(config, profileEditForm);
   toggleSubmitButton(config, profileEditForm, profileEditSubmitButton);
 }
 
@@ -111,9 +108,9 @@ function editProfileFormSubmitHandler (evt) {
 
 // открыть попап добавления своей карточки
 function openPopupCardAdd() {
-  cardAddForm.reset();
   openPopup(popupCardAdd);
-  clearInputError(config, cardAddForm);
+  cardAddForm.reset();
+//  clearInputError(config, cardAddForm);
   toggleSubmitButton(config, cardAddForm, cardAddSubmitButton);
 }
 
@@ -123,7 +120,6 @@ function addCardFormSubmitHandler (evt) {
   const сard = {name: placeNameInput.value, link: placeImageLinkInput.value};
   renderCard(initiateCard(сard));
   closePopup(popupCardAdd);
-  cardAddForm.reset();
 }
 
 // слушать события

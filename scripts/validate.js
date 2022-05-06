@@ -57,15 +57,10 @@ const enableValidation = (config) => {
 };
 
 // очистить ошибки
-function clearInputError(config, formElement) {
-  const textError = Array.from(formElement.querySelectorAll(`.${config.errorClass}`));
-  const placeError = Array.from(formElement.querySelectorAll(`.${config.inputErrorClass}`));
-  textError.forEach((textError) => {
-    textError.textContent = '';
-  });
-  placeError.forEach((placeError) => {
-    placeError.classList.remove(config.inputErrorClass);
-  });
+const inputList = formElement.querySelectorAll(config.inputSelector);
+
+inputList.forEach((inputElement) => { 
+  hideInputError(config, formElement, inputElement);
 };
 
 // изменить состояние кнопки отправки формы
