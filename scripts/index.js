@@ -108,9 +108,9 @@ function editProfileFormSubmitHandler (evt) {
 
 // открыть попап добавления своей карточки
 function openPopupCardAdd() {
-  openPopup(popupCardAdd);
   cardAddForm.reset();
   clearInputError(config, cardAddForm);
+  openPopup(popupCardAdd);
   toggleSubmitButton(config, cardAddForm, cardAddSubmitButton);
 }
 
